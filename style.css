@@ -1,0 +1,24 @@
+body {
+    background-color: #1d1d1d;
+}
+
+#frostedglass {
+    /* --image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='210' width='500'%3E%3Cpolygon points='100,10 40,198 190,78 10,78 160,198' style='fill:lime;stroke:purple;stroke-width:5;fill-rule:nonzero;'/%3E%3C/svg%3E"); */
+    --my-image: url("bridge.jpg");
+    height: 500px;
+    width: 500px;
+    background: paint(frostedglass);
+}
+
+#polka-dots {
+    height: 500px;
+    width: 500px;
+    color: green;
+    --polka-dots-radius: 5;
+    background: paint(polka-dots, 20);
+    transition: --polka-dots-radius 0.5s ease-out;
+}
+
+#polka-dots:hover {
+    --polka-dots-radius: 9;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- frostedglass effect -->
+
+    <section id="frostedglass"></section>
+
+    <!-- polka dots animation -->
+
+    <section id="polka-dots"></section>
+
+    <!-- graph -->
+
+    <!-- frost effect -->
+    <!-- worklets -->
+    <script>
+    if('paintWorklet' in CSS) {
+
+        //frostedglass effect
+
+        CSS.registerProperty({
+            name: '--my-image',
+            syntax: '<image> | none',
+            initialValue: 'none',
+            inherits: false,
+        });
+        CSS.paintWorklet.addModule('worklets/frostedglass.js');
+
+        //polka dots
+        CSS.registerProperty({
+            name: '--polka-dots-radius',
+            syntax: '<number> | none',
+            initialValue: '5',
+            inherits: false,
+        });
+
+        CSS.paintWorklet.addModule('worklets/polka-dots.js');
+    }
+    </script>
+</body>
+</html>
